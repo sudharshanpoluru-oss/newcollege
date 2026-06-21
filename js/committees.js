@@ -65,3 +65,48 @@
   });
 
 })();
+document.addEventListener('DOMContentLoaded', function () {
+
+  const modal = document.getElementById('pdfModal');
+  const frame = document.getElementById('pdfFrame');
+  const closeBtn = document.getElementById('closePdf');
+
+  if (!modal || !frame || !closeBtn) return;
+
+  document.querySelectorAll('.committee-card').forEach(card => {
+
+    card.style.cursor = 'pointer';
+
+    card.addEventListener('click', function () {
+
+      const pdf = this.getAttribute('data-pdf');
+
+      if (!pdf) return;
+
+      frame.src = pdf;
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+
+    });
+
+  });
+
+  closeBtn.addEventListener('click', function () {
+
+    modal.style.display = 'none';
+    frame.src = '';
+    document.body.style.overflow = '';
+
+  });
+
+  modal.addEventListener('click', function (e) {
+
+    if (e.target === modal) {
+      modal.style.display = 'none';
+      frame.src = '';
+      document.body.style.overflow = '';
+    }
+
+  });
+
+});

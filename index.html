@@ -278,22 +278,91 @@
     </section>
 
     <!-- ─── Location / Map ─── -->
-    <section class="section map-section">
-      <div class="container">
+<!-- ─── Location / Map ─── -->
+<section class="section map-section">
+    <div class="container">
         <div class="text-center">
-          <h2 class="section__title">Find Us</h2>
-          <p class="section__subtitle" style="margin-inline:auto;">Visit our campus in the heart of Proddatur.</p>
+            <h2 class="section__title">Find Us</h2>
+            <p class="section__subtitle" style="margin-inline:auto;">
+                Visit our campus in the heart of Proddatur.
+            </p>
         </div>
-      </div>
-      <div class="map-wrapper reveal">
-        <div class="map-container" id="collegeMap">
-          <div class="map-placeholder">
-            <span class="material-symbols-outlined">map</span>
-            <p>Y.S.R. Engineering College<br>Yogi Vemana University Campus<br>Proddatur, Y.S.R. Kadapa District<br>Andhra Pradesh — 516360</p>
-          </div>
+    </div>
+
+    <div style="padding:60px 20px;">
+
+        <div style="
+            max-width:1200px;
+            margin:auto;
+            display:flex;
+            flex-wrap:wrap;
+            align-items:center;
+            justify-content:center;
+            gap:30px;
+        ">
+
+            <!-- Google Map -->
+            <div style="flex:2; min-width:300px;">
+                <iframe
+                    src="https://maps.google.com/maps?q=YSR%20Engineering%20College%20Of%20Yogi%20Vemana%20University,%20Proddatur&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    style="
+                        width:100%;
+                        height:400px;
+                        border:none;
+                        border-radius:16px;
+                        box-shadow:0 10px 30px rgba(0,0,0,0.15);
+                    "
+                    allowfullscreen
+                    loading="lazy">
+                </iframe>
+            </div>
+
+            <!-- Address Card -->
+            <div style="
+                flex:1;
+                min-width:280px;
+                background:#fff;
+                padding:30px;
+                border-radius:16px;
+                box-shadow:0 10px 30px rgba(0,0,0,0.08);
+                text-align:center;
+            ">
+
+                <div style="font-size:48px;margin-bottom:15px;">
+                    📍
+                </div>
+
+                <p style="
+                    line-height:1.8;
+                    color:#444;
+                    margin-bottom:20px;
+                ">
+                    <strong>Y.S.R. Engineering College</strong><br>
+                    Yogi Vemana University Campus<br>
+                    Proddatur, Y.S.R. Kadapa District<br>
+                    Andhra Pradesh – 516360
+                </p>
+
+                <a href="https://maps.google.com/?q=Y.S.R.+Engineering+College+Proddatur"
+                   target="_blank"
+                   style="
+                       display:inline-block;
+                       padding:12px 24px;
+                       background:#1976d2;
+                       color:white;
+                       text-decoration:none;
+                       border-radius:8px;
+                       font-weight:600;
+                   ">
+                    Open in Google Maps
+                </a>
+
+            </div>
+
         </div>
-      </div>
-    </section>
+
+    </div>
+</section>
 
     <!-- ─── Side Panels: Events & Notices ─── -->
     <section class="section panels-section">

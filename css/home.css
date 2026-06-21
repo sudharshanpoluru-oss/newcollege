@@ -656,40 +656,6 @@
 
 .map-section .section-header p { max-width: 520px; margin-left: auto; margin-right: auto; }
 
-.map-wrapper {
-  position: relative;
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-}
-
-.map-container {
-  width: 100%;
-  height: 420px;
-  background: var(--soft);
-  position: relative;
-}
-
-.map-container iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-  display: block;
-}
-
-.map-overlay-card {
-  position: absolute;
-  bottom: var(--space-6);
-  left: var(--space-6);
-  background: rgba(7,63,104,.92);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,.08);
-  border-radius: var(--radius-lg);
-  padding: var(--space-5) var(--space-6);
-  color: var(--white);
-  max-width: 280px;
-}
-
 .map-overlay-card h4 {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-bold);

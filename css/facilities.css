@@ -1,0 +1,218 @@
+/* Facilities Page — Y.S.R. Engineering College */
+
+.facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.facility-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 36px 28px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.facility-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--navy), var(--blue));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.facility-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(7, 63, 104, 0.15);
+  border-color: transparent;
+}
+
+.facility-card:hover::before {
+  opacity: 1;
+}
+
+.facility-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.facility-card__icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  background: rgba(7, 63, 104, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.facility-card__icon .material-symbols-outlined {
+  font-size: 32px;
+  color: var(--navy);
+  font-variation-settings: 'FILL' 1, 'wght' 400;
+  transition: color 0.3s ease;
+}
+
+.facility-card:hover .facility-card__icon {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.facility-card:hover .facility-card__icon .material-symbols-outlined {
+  color: var(--white);
+}
+
+.facility-card__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.facility-card:hover .facility-card__title {
+  color: var(--white);
+}
+
+.facility-card__desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 16px;
+  transition: color 0.3s ease;
+}
+
+.facility-card:hover .facility-card__desc {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.facility-card__features {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.facility-card__features li {
+  font-size: 13px;
+  color: var(--muted);
+  padding-left: 20px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.facility-card__features li::before {
+  content: '•';
+  position: absolute;
+  left: 4px;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.facility-card:hover .facility-card__features li {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Infrastructure Stats */
+
+.infra-stats {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+}
+
+.infra-stat {
+  text-align: center;
+  padding: 28px 16px;
+  background: var(--white);
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  transition: all 0.3s ease;
+}
+
+.infra-stat:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--gold);
+}
+
+.infra-stat__value {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.infra-stat__label {
+  display: block;
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* Scroll reveal */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+  .facilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .infra-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .facilities-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .facility-card {
+    padding: 28px 20px;
+  }
+
+  .infra-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .infra-stat__value {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .infra-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .infra-stat {
+    padding: 20px 12px;
+  }
+}

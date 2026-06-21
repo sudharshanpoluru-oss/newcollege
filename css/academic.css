@@ -1,0 +1,162 @@
+.academic-section {
+  padding: 80px 24px;
+}
+
+.academic-section__inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.academic-section__header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.academic-section__header h2 {
+  margin-bottom: 12px;
+}
+
+.academic-section__header p {
+  color: var(--muted);
+  font-size: 17px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.regulation-list {
+  display: grid;
+  gap: 20px;
+}
+
+.regulation-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 28px;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--line);
+  transition: all var(--transition);
+}
+
+.regulation-card:hover {
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--gold);
+}
+
+.regulation-card__icon {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--soft);
+  border-radius: var(--radius);
+  color: var(--navy);
+}
+
+.regulation-card__icon .material-symbols-outlined {
+  font-size: 26px;
+}
+
+.regulation-card__content {
+  flex: 1;
+}
+
+.regulation-card__content h3 {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.regulation-card__content p {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.regulation-card__action {
+  flex-shrink: 0;
+}
+
+.calendar-list {
+  display: grid;
+  gap: 20px;
+}
+
+.calendar-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 28px;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--line);
+  transition: all var(--transition);
+}
+
+.calendar-card:hover {
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--gold);
+}
+
+.calendar-card__icon {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--soft);
+  border-radius: var(--radius);
+  color: var(--navy);
+}
+
+.calendar-card__icon .material-symbols-outlined {
+  font-size: 26px;
+}
+
+.calendar-card__content {
+  flex: 1;
+}
+
+.calendar-card__content h3 {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.calendar-card__content p {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.calendar-card__action {
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .academic-section {
+    padding: 48px 24px;
+  }
+
+  .regulation-card,
+  .calendar-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .regulation-card__action,
+  .calendar-card__action {
+    width: 100%;
+  }
+
+  .regulation-card__action .button,
+  .calendar-card__action .button {
+    width: 100%;
+    justify-content: center;
+  }
+}

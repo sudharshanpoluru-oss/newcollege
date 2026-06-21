@@ -1,0 +1,263 @@
+/* ===== PROCESS STEPS ===== */
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.step-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  position: relative;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.step-number {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 16px;
+  opacity: .5;
+}
+
+.step-card h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.step-card p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ===== ELIGIBILITY ===== */
+.eligibility-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.elig-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  transition: box-shadow var(--transition);
+}
+
+.elig-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.elig-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: var(--soft);
+  border-radius: var(--radius-sm);
+}
+
+.elig-icon .material-symbols-outlined {
+  font-size: 24px;
+  color: var(--navy);
+}
+
+.elig-card h3 {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.elig-card p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ===== FEE TABLE ===== */
+.fee-table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+}
+
+.fee-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.fee-table thead {
+  background: var(--navy);
+}
+
+.fee-table thead th {
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  text-align: left;
+  padding: 16px 20px;
+  white-space: nowrap;
+}
+
+.fee-table tbody tr {
+  border-bottom: 1px solid var(--line);
+  transition: background var(--transition);
+}
+
+.fee-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.fee-table tbody tr:hover {
+  background: var(--soft);
+}
+
+.fee-table tbody td {
+  padding: 14px 20px;
+  color: var(--ink);
+}
+
+.fee-table tbody td:first-child {
+  font-weight: 500;
+}
+
+.fee-table tbody td:nth-child(n+3) {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.fee-note {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 16px;
+  text-align: center;
+}
+
+/* ===== DOCUMENTS ===== */
+.docs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.doc-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.doc-item:hover {
+  border-color: var(--gold);
+  box-shadow: var(--shadow);
+}
+
+.doc-item .material-symbols-outlined {
+  font-size: 22px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.doc-item span:last-child {
+  font-size: 14px;
+  color: var(--ink);
+  line-height: 1.4;
+}
+
+/* ===== CTA SECTION ===== */
+.contact-cta {
+  background: var(--white);
+}
+
+.cta-box {
+  background: linear-gradient(135deg, var(--navy), #052c4a);
+  border-radius: var(--radius);
+  padding: 48px;
+  color: var(--white);
+}
+
+.cta-content h2 {
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.cta-content > p {
+  color: rgba(255,255,255,.8);
+  margin-bottom: 28px;
+  max-width: 600px;
+}
+
+.cta-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.cta-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: rgba(255,255,255,.9);
+}
+
+.cta-contact-item .material-symbols-outlined {
+  font-size: 20px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .process-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .docs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .process-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .eligibility-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .docs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-box {
+    padding: 32px 24px;
+  }
+
+  .fee-table thead th,
+  .fee-table tbody td {
+    padding: 12px 14px;
+  }
+}

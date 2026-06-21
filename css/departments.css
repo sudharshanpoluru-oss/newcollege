@@ -1,0 +1,453 @@
+/* Department Pages — Shared Styles — Y.S.R. Engineering College */
+
+/* ── Department Hero ── */
+
+.dept-hero {
+  background: linear-gradient(135deg, var(--navy) 0%, #052c4a 100%);
+  color: var(--white);
+  padding: 72px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.dept-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: .4;
+}
+
+.dept-hero__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.dept-hero__inner h1 {
+  color: var(--white);
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  margin-bottom: 12px;
+}
+
+.dept-hero__inner p {
+  font-size: 17px;
+  opacity: .85;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.dept-hero__code {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--gold);
+  background: rgba(216, 154, 37, 0.15);
+  padding: 4px 16px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(216, 154, 37, 0.2);
+}
+
+/* ── About + Vision Mission ── */
+
+.dept-about-grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.dept-about p {
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 16px;
+  font-size: 15px;
+}
+
+.vm-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.vm-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 28px 24px;
+  border-left: 4px solid var(--gold);
+}
+
+.vm-card__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.vm-card__header .material-symbols-outlined {
+  font-size: 24px;
+  color: var(--gold);
+  font-variation-settings: 'FILL' 1, 'wght' 400;
+}
+
+.vm-card__header h3 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.vm-card p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── Faculty ── */
+
+.faculty-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.faculty-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 28px 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.faculty-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.faculty-card__photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--soft), var(--line));
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--white);
+  box-shadow: 0 0 0 3px var(--blue), var(--shadow-md);
+}
+
+.faculty-card__photo .material-symbols-outlined {
+  font-size: 44px;
+  color: var(--muted);
+  font-variation-settings: 'FILL' 1, 'wght' 300;
+}
+
+.faculty-card__name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.faculty-card__role {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--gold);
+  background: rgba(216, 154, 37, 0.1);
+  padding: 3px 12px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+
+.faculty-card__dept {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ── Labs ── */
+
+.labs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.lab-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: all 0.3s ease;
+}
+
+.lab-card:hover {
+  border-color: var(--blue);
+  box-shadow: var(--shadow);
+}
+
+.lab-card .material-symbols-outlined {
+  font-size: 28px;
+  color: var(--blue);
+  margin-bottom: 8px;
+  font-variation-settings: 'FILL' 1, 'wght' 400;
+}
+
+.lab-card h4 {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.lab-card p {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ── Placement Highlights ── */
+
+.placement-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+
+.placement-stat {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 32px 16px;
+  transition: all 0.3s ease;
+}
+
+.placement-stat:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--gold);
+}
+
+.placement-stat__value {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.placement-stat__label {
+  display: block;
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.placement-notes {
+  margin-top: 28px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.placement-notes p {
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.7;
+}
+
+/* ── Quick Facts ── */
+
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.fact-card {
+  text-align: center;
+  padding: 28px 16px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.fact-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--navy);
+}
+
+.fact-card__value {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.fact-card__label {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* ── In-page navigation ── */
+
+.dept-nav {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  background: var(--soft);
+  border-radius: 12px;
+  padding: 4px;
+  max-width: 700px;
+  margin: -24px auto 0;
+  position: relative;
+  z-index: 2;
+  flex-wrap: wrap;
+}
+
+.dept-nav a {
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.dept-nav a:hover,
+.dept-nav a.active {
+  background: var(--white);
+  color: var(--navy);
+  box-shadow: var(--shadow);
+}
+
+/* ── Scroll reveal ── */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 1024px) {
+  .dept-about-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .faculty-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .labs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .placement-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .facts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .dept-hero {
+    padding: 48px 16px;
+  }
+
+  .faculty-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .labs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .placement-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .facts-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .dept-nav {
+    max-width: 100%;
+    border-radius: 0;
+    margin-top: 0;
+    gap: 2px;
+    padding: 6px 12px;
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+
+  .dept-nav a {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .vm-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .faculty-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .placement-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .placement-stat {
+    padding: 24px 12px;
+  }
+
+  .facts-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .fact-card {
+    padding: 20px 12px;
+  }
+}

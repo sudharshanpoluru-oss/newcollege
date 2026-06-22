@@ -878,13 +878,15 @@ table tbody td {
     max-height: 0;
     overflow: hidden;
     flex-direction: column;
+    justify-content: flex-start;
     padding: 0 24px;
     gap: 0;
-    transition: max-height 0.35s ease, padding 0.35s ease;
+    transition: max-height 0.4s ease;
   }
 
   .primary-nav__links.open {
-    max-height: 600px;
+    max-height: 2000px;
+    overflow: visible;
     padding: 8px 24px;
   }
 
@@ -1006,7 +1008,7 @@ table tbody td {
   left: 50%;
   transform: translateX(-50%) translateY(8px);
   min-width: 220px;
-  background: #fff;
+  background: #000000;
   border-radius: 12px;
   padding: 8px 0;
   box-shadow: 0 12px 40px rgba(7, 63, 104, 0.15);
@@ -1027,7 +1029,7 @@ table tbody td {
 .dropdown__menu a {
   display: block;
   padding: 10px 20px;
-  color: #073f68;
+  color: #000000;
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
@@ -1064,6 +1066,7 @@ table tbody td {
     position: static;
     transform: none;
     box-shadow: none;
+    margin-left: 0;
     border-radius: 0;
     border: none;
     padding: 0 0 0 20px;

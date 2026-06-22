@@ -124,10 +124,18 @@
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.3 }
     );
 
     counters.forEach(el => observer.observe(el));
+
+    setTimeout(function () {
+      counters.forEach(function (el) {
+        if (el.textContent === '0') {
+          animateCounter(el);
+        }
+      });
+    }, 1500);
   }
 
   function animateCounter(el) {

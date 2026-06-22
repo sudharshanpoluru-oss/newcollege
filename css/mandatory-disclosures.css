@@ -149,6 +149,22 @@
   gap: 8px;
 }
 
+.featured-card--disabled {
+  cursor: default;
+  opacity: 0.65;
+  filter: grayscale(0.3);
+}
+
+.featured-card--disabled:hover {
+  transform: none;
+  box-shadow: var(--shadow);
+  border-color: var(--line);
+}
+
+.featured-card--disabled:hover::before {
+  opacity: 0;
+}
+
 /* ───────────────────────────────────────────────
    Search Section
    ─────────────────────────────────────────────── */
@@ -305,6 +321,18 @@
 .accordion__toggle[aria-expanded="true"] + .accordion__body {
   max-height: 8000px;
   padding: 0 24px 24px;
+  animation: accordion-fade-in 500ms ease both;
+}
+
+@keyframes accordion-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ───────────────────────────────────────────────

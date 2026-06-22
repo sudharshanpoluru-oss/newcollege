@@ -7,9 +7,22 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-a, button, .nav-toggle, .dropdown__trigger, .fc-tab, .gallery-filter__btn,
-.corner-filters__btn, .corner-card, .modal__close, .tt-branch-btn, .tt-year-btn,
-.tt-zoom-btn, .tt-back-btn, .lightbox__close, .lightbox__prev, .lightbox__next {
+a,
+button,
+.nav-toggle,
+.dropdown__trigger,
+.fc-tab,
+.gallery-filter__btn,
+.corner-filters__btn,
+.corner-card,
+.modal__close,
+.tt-branch-btn,
+.tt-year-btn,
+.tt-zoom-btn,
+.tt-back-btn,
+.lightbox__close,
+.lightbox__prev,
+.lightbox__next {
   touch-action: manipulation;
 }
 
@@ -1008,7 +1021,7 @@ table tbody td {
   left: 50%;
   transform: translateX(-50%) translateY(8px);
   min-width: 220px;
-  background: #000000;
+  background: white;
   border-radius: 12px;
   padding: 8px 0;
   box-shadow: 0 12px 40px rgba(7, 63, 104, 0.15);

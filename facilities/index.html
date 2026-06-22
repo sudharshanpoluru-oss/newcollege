@@ -23,10 +23,10 @@
   <meta name="theme-color" content="#073f68">
 
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap" rel="stylesheet">
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="/css/base.css">
@@ -281,7 +281,79 @@
       font-size: 16px;
     }
 
-    @media (max-width: 768px) {
+    .facility-highlights {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 48px 24px 32px;
+    }
+    .facility-highlights .fh-title {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: clamp(24px, 3vw, 32px);
+      font-weight: 800;
+      color: #073f68;
+      text-align: center;
+      margin: 0 0 8px;
+    }
+    .facility-highlights .fh-subtitle {
+      text-align: center;
+      color: #526372;
+      font-size: 16px;
+      margin: 0 0 36px;
+      line-height: 1.6;
+    }
+    .fh-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .fh-card {
+      background: #fff;
+      border: 1px solid #d9e3eb;
+      border-radius: 14px;
+      padding: 28px 22px;
+      box-shadow: 0 2px 8px rgba(8,47,79,0.06);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .fh-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(8,47,79,0.12);
+    }
+    .fh-card-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #073f68, #0c6ea8);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+    }
+    .fh-card-icon .material-symbols-outlined {
+      font-size: 26px;
+      color: #fff;
+    }
+    .fh-card h3 {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: #14212d;
+      margin: 0 0 8px;
+    }
+    .fh-card p {
+      font-size: 14px;
+      color: #526372;
+      line-height: 1.6;
+      margin: 0;
+    }
+    @media (max-width: 900px) {
+      .fh-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 540px) {
+      .fh-grid { grid-template-columns: 1fr; }
+      .facility-highlights { padding: 32px 16px 24px; }
+    }
+
+      @media (max-width: 768px) {
       .fc-tabs {
         flex-wrap: nowrap;
         overflow-x: auto;
@@ -377,6 +449,74 @@
         <div class="fc-hero-icon"><span class="material-symbols-outlined">apartment</span></div>
         <h1>Campus Facilities</h1>
         <p>Comprehensive infrastructure and amenities at Y.S.R. Engineering College — designed to provide an enriching academic environment.</p>
+      </div>
+    </div>
+
+    <div class="facility-highlights">
+      <h2 class="fh-title">Explore Our Campus Facilities</h2>
+      <p class="fh-subtitle">State-of-the-art infrastructure designed to support academic excellence, research, and holistic student development.</p>
+      <div class="fh-grid">
+
+        <div class="fh-card">
+          <div class="fh-card-icon"><span class="material-symbols-outlined">local_library</span></div>
+          <h3>Central Library</h3>
+          <p>A spacious, air-conditioned library housing over 35,000 volumes, 120+ national and international journals, and access to digital repositories like IEEE, Springer, and J-Gate. Features a dedicated reading hall, e-resource section, and book bank facility for meritorious students.</p>
+        </div>
+
+        <div class="fh-card">
+          <div class="fh-card-icon"><span class="material-symbols-outlined">computer</span></div>
+          <h3>Computer Labs</h3>
+          <p>Six fully networked computer laboratories equipped with 250+ high-performance systems featuring latest Intel processors, licensed software suites (MATLAB, AutoCAD, ANSYS), 24&times;7 high-speed internet via 100 Mbps leased line, and dedicated servers for campus-wide intranet services.</p>
+        </div>
+
+        <div class="fh-card">
+          <div class="fh-card-icon"><span class="material-symbols-outlined">sports_tennis</span></div>
+          <h3>Sports Complex</h3>
+          <p>A sprawling sports complex with facilities for cricket, football, volleyball, basketball, and shuttle badminton courts indoors. Includes a well-equipped gymnasium, table tennis room, chess room, and annual inter-college sports meets. Trained physical education staff guide students throughout the year.</p>
+        </div>
+
+        <div class="fh-card">
+          <div class="fh-card-icon"><span class="material-symbols-outlined">hotel</span></div>
+          <h3>Hostels</h3>
+          <p>Separate hostel facilities for boys and girls within the campus with 24&times;7 security, Wi-Fi connectivity, hygienic mess serving nutritious meals, purified drinking water, solar water heaters, and recreational common rooms with indoor games and television.</p>
+        </div>
+
+        <div class="fh-card">
+          <div class="fh-card-icon"><span class="material-symbols-outlined">restaurant</span></div>
+          <h3>Canteen &amp; Cafeteria</h3>
+          <p>A spacious, hygienic canteen serving a wide variety of vegetarian and non-vegetarian meals, snacks, and beverages at subsidized rates. The cafeteria provides a relaxed atmosphere for students to gather, with seating capacity for over 200 and strict adherence to food safety standards.</p>
+        </div>
+
+        <div class="fh-card">
+          <div class="fh-card-icon"><span class="material-symbols-outlined">directions_bus</span></div>
+          <h3>Transport Facility</h3>
+          <p>The college operates a fleet of buses covering major routes across Proddatur and surrounding villages, ensuring safe and reliable commuting for students and staff. GPS-tracked buses with dedicated drivers follow punctual schedules aligned with academic timings.</p>
+        </div>
+
+        <div class="fh-card">
+          <div class="fh-card-icon"><span class="material-symbols-outlined">theater_comedy</span></div>
+          <h3>Auditorium &amp; Seminar Halls</h3>
+          <p>A centrally air-conditioned auditorium with 500+ seating capacity equipped with state-of-the-art sound system, digital projection, and stage lighting for seminars, workshops, cultural events, and guest lectures. Multiple seminar halls provide venues for department-level academic activities.</p>
+        </div>
+
+        <div class="fh-card">
+          <div class="fh-card-icon"><span class="material-symbols-outlined">local_hospital</span></div>
+          <h3>Medical Facilities</h3>
+          <p>A well-stocked first-aid room with a trained nurse available during college hours. The college has a tie-up with Government General Hospital, Proddatur and private clinics for emergency referrals. Regular health check-up camps and awareness programs are organized for students.</p>
+        </div>
+
+        <div class="fh-card">
+          <div class="fh-card-icon"><span class="material-symbols-outlined">wifi</span></div>
+          <h3>Wi-Fi Campus</h3>
+          <p>The entire campus is covered by high-speed Wi-Fi (100 Mbps leased line) through strategically placed access points across all academic blocks, library, hostels, and administrative areas. Managed by a dedicated IT team ensuring seamless connectivity and network security.</p>
+        </div>
+
+        <div class="fh-card">
+          <div class="fh-card-icon"><span class="material-symbols-outlined">science</span></div>
+          <h3>Laboratories</h3>
+          <p>Well-equipped departmental laboratories for Physics, Chemistry, Engineering Mechanics, Electrical &amp; Electronics, Communications, Computer Science, and Civil Engineering. Each lab is furnished with modern apparatus, test rigs, and simulation software following AICTE norms and safety protocols.</p>
+        </div>
+
       </div>
     </div>
 
@@ -644,3 +784,5 @@
 
 </body>
 </html>
+
+

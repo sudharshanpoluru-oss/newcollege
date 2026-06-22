@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ysrec.edu.in/sitemap.xml

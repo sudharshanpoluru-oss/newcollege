@@ -1118,13 +1118,12 @@
     }
   }
 
-  var _mdTimer = setInterval(injectMandatoryRedesign, 100);
+  var _mdTimer = null;
   (function() {
     var _push2 = history.pushState, _rep2 = history.replaceState;
-    history.pushState = function() { _push2.apply(this, arguments); setTimeout(injectMandatoryRedesign, 50); };
-    history.replaceState = function() { _rep2.apply(this, arguments); setTimeout(injectMandatoryRedesign, 50); };
+    history.pushState = function() { _push2.apply(this, arguments); };
+    history.replaceState = function() { _rep2.apply(this, arguments); };
   })();
-  window.addEventListener("popstate", injectMandatoryRedesign);
   if (document.readyState === "complete" || document.readyState === "interactive") {
     setTimeout(injectMandatoryRedesign, 200);
   } else {

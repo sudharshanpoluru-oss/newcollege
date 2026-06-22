@@ -309,7 +309,6 @@
   flex-direction: column;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   animation: modalFadeUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  overflow: hidden;
   border: 1px solid var(--line);
 }
 
@@ -358,6 +357,7 @@
   padding: 28px;
   overflow-y: auto;
   flex-grow: 1;
+  min-height: 0;
   background: #fafafb;
   scrollbar-width: thin;
   scrollbar-color: var(--line) transparent;
@@ -377,12 +377,17 @@
 /* Tab Navigation */
 .modal-tabs {
   display: flex;
-  background: var(--soft);
-  padding: 4px 12px;
+  background: var(--white);
+  padding: 4px 0 0;
   border-bottom: 1px solid var(--line);
   overflow-x: auto;
-  gap: 4px;
+  gap: 2px;
   scrollbar-width: none;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
 }
 .modal-tabs::-webkit-scrollbar {
   display: none;

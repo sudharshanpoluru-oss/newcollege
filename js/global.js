@@ -67,7 +67,9 @@ document.addEventListener('DOMContentLoaded', function () {
   if (viewProfileBtn && profileModal) {
     viewProfileBtn.addEventListener('click', function () {
       profileModal.removeAttribute('hidden');
-      document.body.style.overflow = 'hidden'; // Prevent scrolling background
+      document.body.style.overflow = 'hidden';
+      var body = profileModal.querySelector('.modal__body');
+      if (body) body.scrollTop = 0;
     });
 
     function closeModal() {
@@ -95,19 +97,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     tabBtns.forEach(function (btn) {
       btn.addEventListener('click', function () {
-        // Remove active class from all buttons
         tabBtns.forEach(function (b) { b.classList.remove('active'); });
-        // Hide all tab contents
         tabContents.forEach(function (c) { c.classList.remove('active'); });
-
-        // Add active class to clicked button
         this.classList.add('active');
-        // Show corresponding tab content
         var targetTab = this.getAttribute('data-tab');
         var targetEl = document.getElementById('tab-' + targetTab);
         if (targetEl) {
           targetEl.classList.add('active');
         }
+        var body = profileModal.querySelector('.modal__body');
+        if (body) body.scrollTop = 0;
       });
     });
   }

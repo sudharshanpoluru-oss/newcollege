@@ -18,7 +18,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" rel="stylesheet">
   <link rel="stylesheet" href="/css/base.css">
-  <link rel="stylesheet" href="/css/studentcorner.css">
+  <link rel="stylesheet" href="/css/studentcorner.css?v=2">
 </head>
 <body>
 
@@ -233,67 +233,21 @@
 </main>
 
 <!-- TIMETABLE MODAL -->
-<div class="modal" id="timetableModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+<div class="modal" id="timetableModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
   <div class="modal__backdrop"></div>
   <div class="modal__content">
     <div class="modal__header">
       <h2 id="modalTitle">Exam &amp; Class Timetable</h2>
       <button class="modal__close" type="button" aria-label="Close modal">&times;</button>
     </div>
-    <div class="modal__body">
-      <div class="timetable-tabs" role="tablist">
-        <button class="timetable-tabs__btn active" data-session="regular" role="tab" aria-selected="true">Regular Exams</button>
-        <button class="timetable-tabs__btn" data-session="supply" role="tab" aria-selected="false">Supply Exams</button>
-        <button class="timetable-tabs__btn" data-session="class" role="tab" aria-selected="false">Class Schedule</button>
-      </div>
-      <div class="timetable-content active" id="ttRegular">
-        <table>
-          <thead>
-            <tr><th>Date</th><th>Day</th><th>Session</th><th>Subject</th><th>Department</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>15-Jun-2026</td><td>Monday</td><td>FN</td><td>Engineering Mathematics II</td><td>CSE, ECE</td></tr>
-            <tr><td>16-Jun-2026</td><td>Tuesday</td><td>FN</td><td>Data Structures</td><td>CSE</td></tr>
-            <tr><td>17-Jun-2026</td><td>Wednesday</td><td>FN</td><td>Digital Logic Design</td><td>ECE, EEE</td></tr>
-            <tr><td>18-Jun-2026</td><td>Thursday</td><td>FN</td><td>Thermodynamics</td><td>ME</td></tr>
-            <tr><td>19-Jun-2026</td><td>Friday</td><td>FN</td><td>Fluid Mechanics</td><td>CE</td></tr>
-            <tr><td>20-Jun-2026</td><td>Saturday</td><td>FN</td><td>Managerial Economics</td><td>MBA</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="timetable-content" id="ttSupply" hidden>
-        <table>
-          <thead>
-            <tr><th>Date</th><th>Day</th><th>Session</th><th>Subject</th><th>Department</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>10-Jul-2026</td><td>Friday</td><td>FN</td><td>Engineering Mathematics I</td><td>All</td></tr>
-            <tr><td>11-Jul-2026</td><td>Saturday</td><td>FN</td><td>Basic Electrical Engineering</td><td>All</td></tr>
-            <tr><td>12-Jul-2026</td><td>Sunday</td><td>FN</td><td>Engineering Physics</td><td>All</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="timetable-content" id="ttClass" hidden>
-        <table>
-          <thead>
-            <tr><th>Day</th><th>9–10</th><th>10–11</th><th>11–12</th><th>12–1</th><th>2–3</th><th>3–4</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Monday</td><td>DS</td><td>EM-II</td><td>DLD</td><td>Lunch</td><td>Lab</td><td>Lab</td></tr>
-            <tr><td>Tuesday</td><td>EM-II</td><td>DS</td><td>Physics</td><td>Lunch</td><td>DLD</td><td>Sports</td></tr>
-            <tr><td>Wednesday</td><td>DLD</td><td>Maths</td><td>DS</td><td>Lunch</td><td>EM-II</td><td>Library</td></tr>
-            <tr><td>Thursday</td><td>Physics</td><td>DLD</td><td>EM-II</td><td>Lunch</td><td>DS Lab</td><td>DS Lab</td></tr>
-            <tr><td>Friday</td><td>DS</td><td>Physics</td><td>Maths</td><td>Lunch</td><td>EM-II</td><td>Club</td></tr>
-            <tr><td>Saturday</td><td>Lab</td><td>Lab</td><td>Remedial</td><td>Lunch</td><td>Sports</td><td>—</td></tr>
-          </tbody>
-        </table>
-      </div>
+    <div class="modal__body tt-modal-content" id="ttModalBody">
+      <!-- Dynamically populated -->
     </div>
   </div>
 </div>
 
 <!-- ACADEMIC CALENDAR MODAL -->
-<div class="modal" id="calendarModal" role="dialog" aria-modal="true" aria-labelledby="calModalTitle" hidden>
+<div class="modal" id="calendarModal" role="dialog" aria-modal="true" aria-labelledby="calModalTitle">
   <div class="modal__backdrop"></div>
   <div class="modal__content">
     <div class="modal__header">
@@ -334,7 +288,7 @@
   </nav>
 </footer>
 
-<script src="/js/global.js" defer></script>
-<script src="/js/studentcorner.js" defer></script>
+<script src="/js/global.js"></script>
+<script src="/js/studentcorner.js?v=2"></script>
 </body>
 </html>

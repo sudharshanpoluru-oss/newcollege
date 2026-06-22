@@ -228,15 +228,15 @@
 .modal {
   position: fixed;
   inset: 0;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   z-index: 300;
   padding: 24px;
 }
 
-.modal[hidden] {
-  display: none;
+.modal.open {
+  display: flex;
 }
 
 .modal__backdrop {
@@ -371,6 +371,217 @@
   display: none;
 }
 
+/* ===== TIMETABLE MODAL (Branch/Year Browser) ===== */
+
+.tt-modal-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #082f4f;
+  margin: 0 0 6px;
+  letter-spacing: -0.5px;
+}
+
+.tt-modal-subtitle {
+  font-size: 14px;
+  color: #526372;
+  margin: 0 0 24px;
+}
+
+.tt-grid-branches {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 14px;
+}
+
+.tt-branch-btn {
+  background: #ffffff;
+  border: 1px solid #d9e3eb;
+  border-radius: 16px;
+  padding: 22px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  font-family: inherit;
+}
+
+.tt-branch-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(8, 47, 79, 0.08);
+  border-color: rgba(12, 110, 168, 0.25);
+}
+
+.tt-branch-btn-abbr {
+  font-size: 30px;
+  font-weight: 900;
+  color: #073f68;
+  margin-bottom: 8px;
+  letter-spacing: -1px;
+}
+
+.tt-branch-btn-name {
+  font-size: 12px;
+  color: #526372;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.tt-header-flex {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #d9e3eb;
+  padding-bottom: 14px;
+}
+
+.tt-back-btn {
+  background: #f3f7fa;
+  border: 1px solid #d9e3eb;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #526372;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.tt-back-btn:hover {
+  background: #d9e3eb;
+  color: #082f4f;
+}
+
+.tt-back-btn span {
+  font-size: 18px !important;
+}
+
+.tt-grid-years {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 14px;
+}
+
+.tt-year-btn {
+  background: #ffffff;
+  border: 1px solid #d9e3eb;
+  border-radius: 16px;
+  padding: 24px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  font-family: inherit;
+}
+
+.tt-year-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(8, 47, 79, 0.08);
+  border-color: rgba(12, 110, 168, 0.25);
+}
+
+.tt-year-btn-icon {
+  font-size: 34px !important;
+  color: #0c6ea8;
+  margin-bottom: 10px;
+}
+
+.tt-year-btn-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: #082f4f;
+}
+
+.tt-zoom-controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-left: auto;
+}
+
+.tt-zoom-btn {
+  background: #ffffff;
+  border: 1px solid #d9e3eb;
+  border-radius: 8px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #526372;
+  transition: all 0.2s ease;
+}
+
+.tt-zoom-btn:hover {
+  background: #f3f7fa;
+  color: #082f4f;
+}
+
+.tt-zoom-btn span {
+  font-size: 16px !important;
+}
+
+.tt-zoom-level {
+  font-size: 12px;
+  font-weight: 700;
+  color: #526372;
+  min-width: 40px;
+  text-align: center;
+}
+
+.tt-image-wrap {
+  overflow: auto;
+  max-height: 60vh;
+  border: 1px solid #d9e3eb;
+  border-radius: 12px;
+  background: #f3f7fa;
+  padding: 8px;
+  position: relative;
+  margin-top: 16px;
+}
+
+.tt-image-el {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.2s ease-out;
+}
+
+.tt-image-error {
+  padding: 60px 20px;
+  text-align: center;
+  color: #526372;
+}
+
+.tt-image-error span {
+  font-size: 48px !important;
+  color: #b7282e;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.tt-title-ellipsis {
+  max-width: 50%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tt-modal-content {
+  min-height: 200px;
+}
+
 /* ===== RESPONSIVE ===== */
 
 @media (max-width: 900px) {
@@ -398,5 +609,9 @@
 
   .modal__body {
     padding: 16px 20px;
+  }
+
+  .tt-title-ellipsis {
+    max-width: 40%;
   }
 }

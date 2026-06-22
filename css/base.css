@@ -927,7 +927,7 @@ h3 {
   transition: opacity .6s ease, transform .6s ease;
 }
 
-.reveal-stagger>*.visible {
+.reveal-stagger.visible>* {
   opacity: 1;
   transform: translateY(0);
 }

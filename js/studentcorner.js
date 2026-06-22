@@ -220,24 +220,58 @@ document.addEventListener('DOMContentLoaded', function () {
   (function() {
     var body = document.getElementById('timetableModal');
     var panning = false, startX, startY, scrollL, scrollT, panTarget = null;
+    var touchId = null;
+    function startPan(target, x, y) {
+      panning = true; panTarget = target;
+      startX = x; startY = y;
+      scrollL = target.scrollLeft; scrollT = target.scrollTop;
+      target.style.cursor = "grabbing";
+    }
+    function movePan(x, y) {
+      if (!panning || !panTarget) return;
+      panTarget.scrollLeft = scrollL - (x - startX);
+      panTarget.scrollTop = scrollT - (y - startY);
+    }
+    function endPan() {
+      if (panTarget) panTarget.style.cursor = "";
+      panning = false; panTarget = null; touchId = null;
+    }
     body.addEventListener('mousedown', function(e) {
       var wrap = e.target.closest('.tt-image-wrap');
       if (!wrap || e.target.closest('a, button')) return;
-      panning = true; panTarget = wrap;
-      startX = e.clientX; startY = e.clientY;
-      scrollL = wrap.scrollLeft; scrollT = wrap.scrollTop;
-      wrap.style.cursor = "grabbing";
+      startPan(wrap, e.clientX, e.clientY);
       e.preventDefault();
     });
     document.addEventListener('mousemove', function(e) {
-      if (!panning || !panTarget) return;
-      panTarget.scrollLeft = scrollL - (e.clientX - startX);
-      panTarget.scrollTop = scrollT - (e.clientY - startY);
+      movePan(e.clientX, e.clientY);
     });
-    document.addEventListener('mouseup', function() {
-      if (panTarget) panTarget.style.cursor = "";
-      panning = false; panTarget = null;
-    });
+    document.addEventListener('mouseup', endPan);
+    body.addEventListener('touchstart', function(e) {
+      var wrap = e.target.closest('.tt-image-wrap');
+      if (!wrap || e.target.closest('a, button') || e.touches.length !== 1) return;
+      touchId = e.touches[0].identifier;
+      startPan(wrap, e.touches[0].clientX, e.touches[0].clientY);
+    }, { passive: true });
+    body.addEventListener('touchmove', function(e) {
+      if (!panning || touchId === null) return;
+      for (var i = 0; i < e.changedTouches.length; i++) {
+        if (e.changedTouches[i].identifier === touchId) {
+          movePan(e.changedTouches[i].clientX, e.changedTouches[i].clientY);
+          break;
+        }
+      }
+    }, { passive: true });
+    body.addEventListener('touchend', function(e) {
+      if (touchId !== null) {
+        for (var i = 0; i < e.changedTouches.length; i++) {
+          if (e.changedTouches[i].identifier === touchId) {
+            endPan();
+            break;
+          }
+        }
+      }
+    }, { passive: true });
+    body.addEventListener('touchcancel', endPan, { passive: true });
     var lastPinchDist = 0;
     body.addEventListener('touchstart', function(e) {
       if (e.touches.length === 2) {

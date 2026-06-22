@@ -283,8 +283,8 @@
 }
 
 .modal__close {
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -295,6 +295,7 @@
   cursor: pointer;
   color: var(--muted);
   transition: all var(--transition);
+  flex-shrink: 0;
 }
 
 .modal__close:hover {
@@ -512,8 +513,8 @@
   background: #ffffff;
   border: 1px solid #d9e3eb;
   border-radius: 8px;
-  width: 32px;
-  height: 32px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -614,4 +615,15 @@
   .tt-title-ellipsis {
     max-width: 40%;
   }
+}
+
+@media (max-width: 480px) {
+  .corner-card { padding: 20px 16px; }
+  .corner-filters { gap: 4px; }
+  .corner-filters__btn { font-size: 12px; padding: 6px 14px; }
+  .modal { padding: 12px; }
+  .tt-branch-btn { padding: 16px 12px; }
+  .tt-branch-btn-abbr { font-size: 24px; }
+  .tt-year-btn { padding: 18px 12px; }
+  .tt-year-btn-icon { font-size: 28px !important; }
 }

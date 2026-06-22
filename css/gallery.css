@@ -385,5 +385,5 @@
   .gallery-hero__title { font-size: var(--font-size-3xl); }
   .gallery-filter { position: static; }
   .gallery-filter__bar { gap: var(--space-1); }
-  .gallery-filter__btn { font-size: var(--font-size-xs); padding: .375rem .875rem; }
+  .gallery-filter__btn { font-size: var(--font-size-sm); padding: .5rem 1rem; min-height: 44px; }
 }

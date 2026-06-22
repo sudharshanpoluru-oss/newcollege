@@ -333,8 +333,8 @@
 }
 
 .modal__close {
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -345,6 +345,7 @@
   cursor: pointer;
   color: var(--muted);
   transition: all var(--transition);
+  flex-shrink: 0;
 }
 
 .modal__close:hover {
@@ -707,6 +708,12 @@
   .cv-pub-counters {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+@media (max-width: 600px) {
+  .cv-table { font-size: 11px; }
+  .cv-table th, .cv-table td { padding: 8px 10px; }
+  .cv-table-container { margin: 0 -12px; border-radius: 0; border-left: none; border-right: none; }
 }
 
 @media (max-width: 600px) {

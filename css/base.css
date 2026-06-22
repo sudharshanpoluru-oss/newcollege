@@ -4,6 +4,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a, button, .nav-toggle, .dropdown__trigger, .fc-tab, .gallery-filter__btn,
+.corner-filters__btn, .corner-card, .modal__close, .tt-branch-btn, .tt-year-btn,
+.tt-zoom-btn, .tt-back-btn, .lightbox__close, .lightbox__prev, .lightbox__next {
+  touch-action: manipulation;
 }
 
 :root {
@@ -868,15 +875,17 @@ table tbody td {
   }
 
   .primary-nav__links {
-    display: none;
+    max-height: 0;
+    overflow: hidden;
     flex-direction: column;
-    padding: 8px 24px;
+    padding: 0 24px;
     gap: 0;
-    overflow: visible;
+    transition: max-height 0.35s ease, padding 0.35s ease;
   }
 
   .primary-nav__links.open {
-    display: flex;
+    max-height: 600px;
+    padding: 8px 24px;
   }
 
   .primary-nav__links a {

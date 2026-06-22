@@ -48,6 +48,7 @@
   color: var(--navy);
   line-height: 1.1;
   margin-bottom: 6px;
+  transition: color var(--transition-base);
 }
 
 .stat-label {
@@ -237,7 +238,7 @@
 .principal-sign strong {
   display: block;
   font-family: var(--font-heading);
-  color: var(--ink);
+  color: var(--color-text);
   font-size: 16px;
 }
 

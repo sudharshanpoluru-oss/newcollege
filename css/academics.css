@@ -63,17 +63,18 @@
 
 .program-card {
   background: var(--color-white);
-  border: 1px solid var(--line);
-  border-radius: 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
   padding: 32px 24px;
   text-align: center;
-  transition: all 0.3s ease;
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-base);
 }
 
 .program-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--gold);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--color-accent);
 }
 
 .program-card__icon {
@@ -113,9 +114,10 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 48px;
-  background: var(--white);
+  background: var(--color-white);
   border-radius: 16px;
-  border: 1px solid var(--line);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
 }
 
 .research-info__content h3 {
@@ -174,17 +176,18 @@
   text-align: center;
   gap: 8px;
   padding: 28px 16px;
-  background: var(--white);
-  border: 1px solid var(--line);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
   border-radius: 14px;
   text-decoration: none;
-  transition: all 0.3s ease;
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-base);
 }
 
 .dept-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--gold);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--color-accent);
 }
 
 .dept-card__icon {
@@ -221,16 +224,18 @@
 }
 
 .academic-card {
-  background: var(--white);
-  border: 1px solid var(--line);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
   border-radius: 16px;
   padding: 36px 28px;
-  transition: all 0.3s ease;
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-base);
 }
 
 .academic-card:hover {
-  box-shadow: var(--shadow-md);
-  border-color: var(--navy);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--color-accent);
 }
 
 .academic-card__header {
@@ -295,18 +300,19 @@
 }
 
 .research-item {
-  background: var(--white);
-  border: 1px solid var(--line);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
   border-radius: 14px;
   padding: 32px 24px;
   text-align: center;
-  transition: all 0.3s ease;
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-base);
 }
 
 .research-item:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--blue);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--color-accent);
 }
 
 .research-item__icon {

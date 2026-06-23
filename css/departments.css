@@ -416,11 +416,17 @@
     padding: 6px 12px;
     overflow-x: auto;
     justify-content: flex-start;
+    scrollbar-width: none;
+  }
+
+  .dept-nav::-webkit-scrollbar {
+    display: none;
   }
 
   .dept-nav a {
     font-size: 12px;
     padding: 6px 12px;
+    flex-shrink: 0;
   }
 
   .vm-card {
@@ -449,5 +455,12 @@
 
   .fact-card {
     padding: 20px 12px;
+  }
+}
+
+@media (max-width: 380px) {
+  .placement-stats,
+  .facts-grid {
+    grid-template-columns: 1fr;
   }
 }

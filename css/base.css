@@ -183,15 +183,15 @@ h6 {
 }
 
 h1 {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(1.75rem, 5vw, 4rem); /* 28px to 64px */
 }
 
 h2 {
-  font-size: clamp(1.5rem, 3vw, 2.125rem);
+  font-size: clamp(1.5rem, 3.5vw, 3rem); /* 24px to 48px */
 }
 
 h3 {
-  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-size: clamp(1.25rem, 2.5vw, 2rem); /* 20px to 32px */
 }
 
 .sr-only {
@@ -1337,4 +1337,416 @@ table tbody td {
     background: transparent;
     padding-left: 20px;
   }
+}
+
+/* ==========================================================================
+   INTERACTIVE MULTITHEME STYLES
+   ========================================================================== */
+
+[data-theme="emerald"] {
+  --navy: #164e32;
+  --navy-dark: #0f3a24;
+  --navy-darker: #0a2517;
+  --gold: #d89a25;
+  --gold-light: #f0c75e;
+  --gold-subtle: rgba(216, 154, 37, 0.12);
+  --blue: #1b4d3e;
+  --blue-bright: #2d6a4f;
+  --ink: #10261c;
+  --muted: #4e6b5c;
+  --line: #cde0d5;
+  --soft: #f1f7f4;
+}
+
+[data-theme="crimson"] {
+  --navy: #800f2f;
+  --navy-dark: #5c0a21;
+  --navy-darker: #3d0514;
+  --gold: #c77d55;
+  --gold-light: #dfa07a;
+  --gold-subtle: rgba(199, 125, 85, 0.12);
+  --blue: #a4133c;
+  --blue-bright: #ff4d6d;
+  --ink: #2b0911;
+  --muted: #735056;
+  --line: #f0d5da;
+  --soft: #faf0f2;
+}
+
+[data-theme="midnight"] {
+  --navy: #1e293b;
+  --navy-dark: #0f172a;
+  --navy-darker: #030712;
+  --gold: #06b6d4;
+  --gold-light: #67e8f9;
+  --gold-subtle: rgba(6, 182, 212, 0.16);
+  --blue: #3b82f6;
+  --blue-bright: #60a5fa;
+  --ink: #f8fafc;
+  --muted: #94a3b8;
+  --line: #334155;
+  --soft: #0f172a;
+  --white: #1e293b;
+  --black: #ffffff;
+  --color-bg: #030712;
+  
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, .4);
+  --shadow-card-hover: 0 12px 30px rgba(6, 182, 212, .2);
+  --shadow-glow-blue: 0 0 30px rgba(6, 182, 212, .15);
+  --shadow-glow-gold: 0 0 30px rgba(6, 182, 212, .25);
+}
+
+/* ==========================================================================
+   FOLLOW-GLOW CURSOR SPOTLIGHT EFFECT
+   ========================================================================== */
+
+.card--glow, .profile-card, .stat-card, .panel, .map-address-card, 
+.fc-stat-card, .fh-card, .committee-card, .corner-card, .tt-branch-btn, .tt-year-btn, 
+.faculty-card, .lab-card, .placement-stat, .fact-card, .vm-card, .course-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.card--glow::before, .profile-card::before, .stat-card::before, .panel::before, .map-address-card::before, 
+.fc-stat-card::before, .fh-card::before, .committee-card::before, .corner-card::before, .tt-branch-btn::before, .tt-year-btn::before, 
+.faculty-card::before, .lab-card::before, .placement-stat::before, .fact-card::before, .vm-card::before, .course-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    300px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+    var(--glow-color, rgba(216, 154, 37, 0.15)),
+    transparent 80%
+  );
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+/* Adjust colors for glow background based on themes */
+[data-theme="midnight"] .card--glow::before, 
+[data-theme="midnight"] .profile-card::before, 
+[data-theme="midnight"] .stat-card::before, 
+[data-theme="midnight"] .panel::before,
+[data-theme="midnight"] .map-address-card::before,
+[data-theme="midnight"] .fc-stat-card::before,
+[data-theme="midnight"] .fh-card::before,
+[data-theme="midnight"] .committee-card::before,
+[data-theme="midnight"] .corner-card::before,
+[data-theme="midnight"] .tt-branch-btn::before,
+[data-theme="midnight"] .tt-year-btn::before,
+[data-theme="midnight"] .faculty-card::before,
+[data-theme="midnight"] .lab-card::before,
+[data-theme="midnight"] .placement-stat::before,
+[data-theme="midnight"] .fact-card::before,
+[data-theme="midnight"] .vm-card::before,
+[data-theme="midnight"] .course-card::before {
+  --glow-color: rgba(6, 182, 212, 0.2);
+}
+
+.card--glow:hover::before, .profile-card:hover::before, .stat-card:hover::before, .panel:hover::before, .map-address-card:hover::before,
+.fc-stat-card:hover::before, .fh-card:hover::before, .committee-card:hover::before, .corner-card:hover::before, .tt-branch-btn:hover::before, .tt-year-btn:hover::before,
+.faculty-card:hover::before, .lab-card:hover::before, .placement-stat:hover::before, .fact-card:hover::before, .vm-card:hover::before, .course-card:hover::before {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   FLOATING THEME SELECTOR WIDGET
+   ========================================================================== */
+
+.theme-selector-widget {
+  position: fixed;
+  left: 24px;
+  bottom: 24px;
+  z-index: 999;
+  font-family: var(--font-heading);
+}
+
+.theme-selector-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background: var(--gradient-primary);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(7, 63, 104, .25);
+  transition: all var(--transition-base);
+}
+
+.theme-selector-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 24px rgba(7, 63, 104, .35);
+}
+
+.theme-selector-btn .material-symbols-outlined {
+  font-size: 24px;
+  transition: transform var(--transition-base);
+}
+
+.theme-selector-widget.open .theme-selector-btn .material-symbols-outlined {
+  transform: rotate(180deg);
+}
+
+.theme-options-panel {
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  width: 250px;
+  box-shadow: var(--shadow-xl);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px) scale(0.95);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 10;
+}
+
+.theme-selector-widget.open .theme-options-panel {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.theme-options-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  margin-bottom: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.theme-option-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  background: var(--color-soft);
+  border: 2px solid transparent;
+  transition: all var(--transition-fast);
+}
+
+.theme-option-row:hover {
+  background: var(--color-border);
+  transform: translateX(4px);
+}
+
+.theme-option-row.active {
+  border-color: var(--color-accent);
+  background: var(--color-white);
+}
+
+.theme-swatch {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.15);
+  flex-shrink: 0;
+}
+
+.theme-swatch--classic {
+  background: linear-gradient(135deg, #073f68 50%, #d89a25 50%);
+}
+.theme-swatch--emerald {
+  background: linear-gradient(135deg, #164e32 50%, #d89a25 50%);
+}
+.theme-swatch--crimson {
+  background: linear-gradient(135deg, #800f2f 50%, #c77d55 50%);
+}
+.theme-swatch--midnight {
+  background: linear-gradient(135deg, #0f172a 50%, #06b6d4 50%);
+}
+
+.theme-option-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* ==========================================================================
+   SCROLL PROGRESS BAR
+   ========================================================================== */
+
+.scroll-progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4.5px;
+  z-index: 1001;
+  background: transparent;
+  pointer-events: none;
+}
+
+.scroll-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-blue), var(--color-accent));
+  box-shadow: 0 0 8px var(--color-accent);
+  transition: width 50ms linear;
+}
+
+/* ==========================================================================
+   MAP ADDRESS CARD CLASS
+   ========================================================================== */
+
+.map-address-card {
+  flex: 1;
+  min-width: 280px;
+  background: var(--color-white);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-base);
+}
+
+.map-address-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.map-address-card p {
+  line-height: 1.8;
+  color: var(--color-text);
+  margin-bottom: 20px;
+}
+
+.map-address-card a {
+  display: inline-block;
+  padding: 12px 24px;
+  background: var(--color-blue);
+  color: white !important;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.map-address-card a:hover {
+  background: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+/* ===== ACCESSIBILITY FOCUS INDICATOR ===== */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+.dropdown__trigger:focus-visible,
+[tabindex="0"]:focus-visible {
+  outline: 3px solid var(--color-accent) !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 0 5px var(--gold-subtle) !important;
+}
+
+/* ==========================================================================
+   GLOBAL MOBILE RESPONSIVENESS AND TOUCH UPGRADES
+   ========================================================================== */
+
+/* 1. Fluid Images & Media */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 2. Minimum Touch Targets (48px height) */
+.button, 
+.btn, 
+.tab-btn, 
+.fc-tab, 
+.gallery-filter__btn, 
+.corner-filters__btn, 
+.timetable-tabs__btn, 
+.tt-branch-btn, 
+.tt-year-btn, 
+.tt-zoom-btn, 
+.tt-back-btn, 
+.theme-selector-btn, 
+.modal__close, 
+.lightbox__close, 
+.lightbox__prev, 
+.lightbox__next, 
+.video-modal__close, 
+.back-btn, 
+.former-btn, 
+.add-btn, 
+.submit-btn, 
+button, 
+input[type="button"], 
+input[type="submit"], 
+input[type="reset"] {
+  min-height: 48px;
+  box-sizing: border-box;
+}
+
+/* Ensure inputs, select lists and textareas have at least 48px height and 16px font-size for touch accuracy */
+input[type="text"], 
+input[type="email"], 
+input[type="tel"], 
+input[type="password"], 
+input[type="url"], 
+select, 
+textarea {
+  min-height: 48px;
+  font-size: 16px; /* Prevents iOS auto-zoom on focus */
+  padding: 12px 16px;
+  box-sizing: border-box;
+}
+
+/* 3. Global Responsive Spacing Overrides for Small Screen Sizes */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  /* Breathe room on mobile */
+  .section {
+    padding: 40px 0;
+  }
+
+  .section__header {
+    margin-bottom: 24px;
+  }
+}
+
+/* 4. Global Responsive Table Scrolling Wrapper */
+.table-wrapper, 
+.table-section, 
+.fc-table-wrap, 
+.summary-table-wrap, 
+.table-wrapper-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 20px;
+  border-radius: var(--radius, 10px);
+}
+
+.table-wrapper table, 
+.table-section table, 
+.fc-table-wrap table, 
+.summary-table-wrap table, 
+.table-wrapper-responsive table {
+  width: 100%;
+  min-width: 600px; /* Forces scrolling on mobile instead of column crushing */
 }

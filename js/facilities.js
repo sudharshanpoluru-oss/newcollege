@@ -238,11 +238,6 @@
       '</table></div>';
   }
 
-  function updateStat(id, value) {
-    var el = document.getElementById(id);
-    if (el) el.textContent = value;
-  }
-
   function computeStats() {
     var totalRooms = 0, totalArea = 0;
     fcData.forEach(function(cat) {
@@ -251,11 +246,16 @@
         totalArea += parseFloat(r.area) || 0;
       });
     });
-    updateStat('fcTotalRooms', totalRooms);
-    updateStat('fcTotalArea', totalArea.toFixed(0));
-    updateStat('fcAdminRooms', fcData[0].rooms.length);
-    var instructionalCount = fcData[2].rooms.length + fcData[3].rooms.length;
-    updateStat('fcInstructionalRooms', instructionalCount);
+
+    var statsContainer = document.getElementById('fcStats');
+    if (statsContainer) {
+      statsContainer.innerHTML =
+        '<div class="fc-stat-card"><span class="fc-stat-icon material-symbols-outlined">meeting_room</span><span class="fc-stat-value">' + totalRooms + '</span><span class="fc-stat-label">Total Rooms</span></div>' +
+        '<div class="fc-stat-card"><span class="fc-stat-icon material-symbols-outlined">square_foot</span><span class="fc-stat-value">' + totalArea.toFixed(0) + '</span><span class="fc-stat-label">Total Area (m²)</span></div>' +
+        '<div class="fc-stat-card"><span class="fc-stat-icon material-symbols-outlined">category</span><span class="fc-stat-value">' + fcData.length + '</span><span class="fc-stat-label">Categories</span></div>' +
+        '<div class="fc-stat-card"><span class="fc-stat-icon material-symbols-outlined">business</span><span class="fc-stat-value">' + fcData[0].rooms.length + '</span><span class="fc-stat-label">Admin Rooms</span></div>' +
+        '<div class="fc-stat-card"><span class="fc-stat-icon material-symbols-outlined">school</span><span class="fc-stat-value">' + (fcData[2].rooms.length + fcData[3].rooms.length) + '</span><span class="fc-stat-label">Instructional</span></div>';
+    }
   }
 
   function init() {

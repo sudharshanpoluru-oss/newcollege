@@ -232,14 +232,329 @@
             <a class="button" href="/about/">Know More About Us</a>
           </div>
           <div class="about-image reveal--right">
-            <img src="/images/campus-aerial.svg" alt="YSREC Campus aerial view" loading="lazy">
-          </div>
+          <img src="/images/campus-aerial.svg" alt="YSREC Campus aerial view" loading="lazy">
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ─── Principal / Leadership ─── -->
-    <section class="section principal-section">
+  <!-- ─── Explore Our Departments (Branch Explorer) ─── -->
+  <section class="section branches-section section--soft">
+    <div class="container">
+      <div class="text-center">
+        <span class="section__label">Academics</span>
+        <h2 class="section__title">Explore Our Departments</h2>
+        <p class="section__subtitle" style="margin-inline:auto;">Discover our specialized engineering branches offering comprehensive, industry-aligned curricula.</p>
+      </div>
+      
+      <div class="branches-explorer">
+        <!-- Tabs Navigation -->
+        <div class="branches-tabs">
+          <button class="branch-tab-btn active" data-branch="cse" type="button">CSE</button>
+          <button class="branch-tab-btn" data-branch="ece" type="button">ECE</button>
+          <button class="branch-tab-btn" data-branch="eee" type="button">EEE</button>
+          <button class="branch-tab-btn" data-branch="me" type="button">ME</button>
+          <button class="branch-tab-btn" data-branch="ce" type="button">CE</button>
+          <button class="branch-tab-btn" data-branch="sh" type="button">SH</button>
+        </div>
+
+        <!-- Branch Contents -->
+        <div class="branch-contents">
+          <!-- CSE -->
+          <div class="branch-panel active" id="branch-cse">
+            <div class="branch-panel__grid">
+              <div class="branch-panel__info">
+                <h3>Computer Science &amp; Engineering</h3>
+                <p class="branch-panel__lead">Driving innovation through computational thinking, software engineering, and advanced research fields like AI/ML.</p>
+                
+                <div class="branch-stats">
+                  <div class="branch-stat">
+                    <strong>60</strong>
+                    <span>Annual Intake</span>
+                  </div>
+                  <div class="branch-stat">
+                    <strong>6+</strong>
+                    <span>Specialized Labs</span>
+                  </div>
+                  <div class="branch-stat">
+                    <strong>15+</strong>
+                    <span>Faculty Members</span>
+                  </div>
+                </div>
+
+                <h4 style="margin-top: 20px; font-size:14px; text-transform:uppercase; color:var(--color-accent); font-weight:700;">Key Laboratory Highlights</h4>
+                <ul class="branch-labs-list">
+                  <li>Advanced AI &amp; Machine Learning Lab</li>
+                  <li>Database Management Systems Lab</li>
+                  <li>Web Technologies &amp; Software Design Lab</li>
+                </ul>
+                
+                <div style="margin-top: 30px;">
+                  <a class="button button--primary" href="/academics/">Visit Academics Page</a>
+                </div>
+              </div>
+              <div class="branch-panel__visual">
+                <div class="branch-visual-card">
+                  <span class="material-symbols-outlined branch-visual-icon">computer</span>
+                  <h4>Core Careers</h4>
+                  <p>Software Engineer, Data Scientist, Systems Architect, AI/ML Practitioner, Cybersecurity Analyst.</p>
+                </div>
+                <div class="branch-visual-card">
+                  <span class="material-symbols-outlined branch-visual-icon">terminal</span>
+                  <h4>Research Focus</h4>
+                  <p>Machine Learning Models, Internet of Things (IoT), Cloud Infrastructure, Distributed Systems.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ECE -->
+          <div class="branch-panel" id="branch-ece">
+            <div class="branch-panel__grid">
+              <div class="branch-panel__info">
+                <h3>Electronics &amp; Communication Engineering</h3>
+                <p class="branch-panel__lead">Building the next generation of communication networks, embedded systems, and VLSI microchip technologies.</p>
+                
+                <div class="branch-stats">
+                  <div class="branch-stat">
+                    <strong>60</strong>
+                    <span>Annual Intake</span>
+                  </div>
+                  <div class="branch-stat">
+                    <strong>5+</strong>
+                    <span>Specialized Labs</span>
+                  </div>
+                  <div class="branch-stat">
+                    <strong>12+</strong>
+                    <span>Faculty Members</span>
+                  </div>
+                </div>
+
+                <h4 style="margin-top: 20px; font-size:14px; text-transform:uppercase; color:var(--color-accent); font-weight:700;">Key Laboratory Highlights</h4>
+                <ul class="branch-labs-list">
+                  <li>VLSI Design &amp; Simulation Lab</li>
+                  <li>Digital Signal Processing &amp; Embedded Systems Lab</li>
+                  <li>Microprocessors &amp; Communication Lab</li>
+                </ul>
+                
+                <div style="margin-top: 30px;">
+                  <a class="button button--primary" href="/academics/">Visit Academics Page</a>
+                </div>
+              </div>
+              <div class="branch-panel__visual">
+                <div class="branch-visual-card">
+                  <span class="material-symbols-outlined branch-visual-icon">settings_input_component</span>
+                  <h4>Core Careers</h4>
+                  <p>VLSI Design Engineer, Embedded Systems Developer, Telecom Engineer, Network Specialist.</p>
+                </div>
+                <div class="branch-visual-card">
+                  <span class="material-symbols-outlined branch-visual-icon">router</span>
+                  <h4>Research Focus</h4>
+                  <p>5G Wireless Networks, Internet of Things (IoT), Microelectronics, Embedded System Control.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- EEE -->
+          <div class="branch-panel" id="branch-eee">
+            <div class="branch-panel__grid">
+              <div class="branch-panel__info">
+                <h3>Electrical &amp; Electronics Engineering</h3>
+                <p class="branch-panel__lead">Empowering the future with sustainable energy grids, electrical machinery, and electronic control systems.</p>
+                
+                <div class="branch-stats">
+                  <div class="branch-stat">
+                    <strong>60</strong>
+                    <span>Annual Intake</span>
+                  </div>
+                  <div class="branch-stat">
+                    <strong>5+</strong>
+                    <span>Specialized Labs</span>
+                  </div>
+                  <div class="branch-stat">
+                    <strong>10+</strong>
+                    <span>Faculty Members</span>
+                  </div>
+                </div>
+
+                <h4 style="margin-top: 20px; font-size:14px; text-transform:uppercase; color:var(--color-accent); font-weight:700;">Key Laboratory Highlights</h4>
+                <ul class="branch-labs-list">
+                  <li>Electrical Machines &amp; Drives Lab</li>
+                  <li>Power Electronics &amp; Simulation Lab</li>
+                  <li>Control Systems &amp; Measurements Lab</li>
+                </ul>
+                
+                <div style="margin-top: 30px;">
+                  <a class="button button--primary" href="/academics/">Visit Academics Page</a>
+                </div>
+              </div>
+              <div class="branch-panel__visual">
+                <div class="branch-visual-card">
+                  <span class="material-symbols-outlined branch-visual-icon">bolt</span>
+                  <h4>Core Careers</h4>
+                  <p>Power Grid Engineer, Control Systems Analyst, Renewable Energy Developer, Electrical Designer.</p>
+                </div>
+                <div class="branch-visual-card">
+                  <span class="material-symbols-outlined branch-visual-icon">electric_car</span>
+                  <h4>Research Focus</h4>
+                  <p>Smart Microgrids, Electric Vehicle (EV) Powertrains, Renewable Integration, Power Quality.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ME -->
+          <div class="branch-panel" id="branch-me">
+            <div class="branch-panel__grid">
+              <div class="branch-panel__info">
+                <h3>Mechanical Engineering</h3>
+                <p class="branch-panel__lead">Designing, analyzing, and manufacturing the mechanical structures, thermodynamics devices, and robotics systems of tomorrow.</p>
+                
+                <div class="branch-stats">
+                  <div class="branch-stat">
+                    <strong>60</strong>
+                    <span>Annual Intake</span>
+                  </div>
+                  <div class="branch-stat">
+                    <strong>6+</strong>
+                    <span>Specialized Labs</span>
+                  </div>
+                  <div class="branch-stat">
+                    <strong>12+</strong>
+                    <span>Faculty Members</span>
+                  </div>
+                </div>
+
+                <h4 style="margin-top: 20px; font-size:14px; text-transform:uppercase; color:var(--color-accent); font-weight:700;">Key Laboratory Highlights</h4>
+                <ul class="branch-labs-list">
+                  <li>CAD/CAM Computational Laboratory</li>
+                  <li>Fluid Mechanics &amp; Hydraulic Machines Lab</li>
+                  <li>Thermal Engineering &amp; Heat Transfer Lab</li>
+                </ul>
+                
+                <div style="margin-top: 30px;">
+                  <a class="button button--primary" href="/academics/">Visit Academics Page</a>
+                </div>
+              </div>
+              <div class="branch-panel__visual">
+                <div class="branch-visual-card">
+                  <span class="material-symbols-outlined branch-visual-icon">precision_manufacturing</span>
+                  <h4>Core Careers</h4>
+                  <p>Design Engineer, Robotics Specialist, Automotive Engineer, Manufacturing Lead.</p>
+                </div>
+                <div class="branch-visual-card">
+                  <span class="material-symbols-outlined branch-visual-icon">build</span>
+                  <h4>Research Focus</h4>
+                  <p>Additive Manufacturing (3D Printing), Smart Materials, Thermal Management, Automated Robotics.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CE -->
+          <div class="branch-panel" id="branch-ce">
+            <div class="branch-panel__grid">
+              <div class="branch-panel__info">
+                <h3>Civil Engineering</h3>
+                <p class="branch-panel__lead">Planning, designing, and constructing the infrastructure networks that shape society—bridges, smart cities, and transit networks.</p>
+                
+                <div class="branch-stats">
+                  <div class="branch-stat">
+                    <strong>60</strong>
+                    <span>Annual Intake</span>
+                  </div>
+                  <div class="branch-stat">
+                    <strong>5+</strong>
+                    <span>Specialized Labs</span>
+                  </div>
+                  <div class="branch-stat">
+                    <strong>10+</strong>
+                    <span>Faculty Members</span>
+                  </div>
+                </div>
+
+                <h4 style="margin-top: 20px; font-size:14px; text-transform:uppercase; color:var(--color-accent); font-weight:700;">Key Laboratory Highlights</h4>
+                <ul class="branch-labs-list">
+                  <li>Structural &amp; Concrete Technology Lab</li>
+                  <li>Geotechnical &amp; Soil Mechanics Lab</li>
+                  <li>Environmental &amp; Transportation Engineering Lab</li>
+                </ul>
+                
+                <div style="margin-top: 30px;">
+                  <a class="button button--primary" href="/academics/">Visit Academics Page</a>
+                </div>
+              </div>
+              <div class="branch-panel__visual">
+                <div class="branch-visual-card">
+                  <span class="material-symbols-outlined branch-visual-icon">architecture</span>
+                  <h4>Core Careers</h4>
+                  <p>Structural Designer, Construction Manager, Urban Planner, Transportation Consultant.</p>
+                </div>
+                <div class="branch-visual-card">
+                  <span class="material-symbols-outlined branch-visual-icon">foundation</span>
+                  <h4>Research Focus</h4>
+                  <p>Green Construction Materials, Earthquake-Resistant Designs, Sustainable Water Resources.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SH -->
+          <div class="branch-panel" id="branch-sh">
+            <div class="branch-panel__grid">
+              <div class="branch-panel__info">
+                <h3>Humanities &amp; Basic Sciences</h3>
+                <p class="branch-panel__lead">Providing a foundation in Mathematics, Physics, Chemistry, and Communication Skills crucial for advanced engineering reasoning.</p>
+                
+                <div class="branch-stats">
+                  <div class="branch-stat">
+                    <strong>-</strong>
+                    <span>Foundation Dept</span>
+                  </div>
+                  <div class="branch-stat">
+                    <strong>3+</strong>
+                    <span>Equipped Labs</span>
+                  </div>
+                  <div class="branch-stat">
+                    <strong>8+</strong>
+                    <span>Faculty Members</span>
+                  </div>
+                </div>
+
+                <h4 style="margin-top: 20px; font-size:14px; text-transform:uppercase; color:var(--color-accent); font-weight:700;">Key Laboratory Highlights</h4>
+                <ul class="branch-labs-list">
+                  <li>Engineering Physics Laboratory</li>
+                  <li>Engineering Chemistry Laboratory</li>
+                  <li>English Communication Skills (ELCS) Lab</li>
+                </ul>
+                
+                <div style="margin-top: 30px;">
+                  <a class="button button--primary" href="/academics/">Visit Academics Page</a>
+                </div>
+              </div>
+              <div class="branch-panel__visual">
+                <div class="branch-visual-card">
+                  <span class="material-symbols-outlined branch-visual-icon">science</span>
+                  <h4>Key Support</h4>
+                  <p>Physics and Chemistry labs help bridge fundamental science theories with practical engineering constructs.</p>
+                </div>
+                <div class="branch-visual-card">
+                  <span class="material-symbols-outlined branch-visual-icon">translate</span>
+                  <h4>Soft Skills</h4>
+                  <p>Advanced Language Communication programs focusing on public speaking, CV writing, and interview prep.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Principal / Leadership ─── -->
+  <section class="section principal-section">
       <div class="container">
         <div class="text-center">
           <h2 class="section__title">Our Leadership</h2>
@@ -318,45 +633,18 @@
             </div>
 
             <!-- Address Card -->
-            <div style="
-                flex:1;
-                min-width:280px;
-                background:#fff;
-                padding:30px;
-                border-radius:16px;
-                box-shadow:0 10px 30px rgba(0,0,0,0.08);
-                text-align:center;
-            ">
-
-                <div style="font-size:48px;margin-bottom:15px;">
-                    📍
-                </div>
-
-                <p style="
-                    line-height:1.8;
-                    color:#444;
-                    margin-bottom:20px;
-                ">
+            <div class="map-address-card animate-glow">
+                <div style="font-size:48px;margin-bottom:15px;">📍</div>
+                <p>
                     <strong>Y.S.R. Engineering College</strong><br>
                     Yogi Vemana University Campus<br>
                     Proddatur, Y.S.R. Kadapa District<br>
                     Andhra Pradesh – 516360
                 </p>
-
                 <a href="https://maps.google.com/?q=Y.S.R.+Engineering+College+Proddatur"
-                   target="_blank"
-                   style="
-                       display:inline-block;
-                       padding:12px 24px;
-                       background:#1976d2;
-                       color:white;
-                       text-decoration:none;
-                       border-radius:8px;
-                       font-weight:600;
-                   ">
+                   target="_blank" rel="noopener noreferrer">
                     Open in Google Maps
                 </a>
-
             </div>
 
         </div>
@@ -377,23 +665,33 @@
             <ul class="panel__list">
               <li class="panel__item">
                 <time class="panel__date" datetime="2026-07-15"><span>15</span> Jul</time>
-                <div>
+                <div class="panel__item-summary">
                   <strong>Technical Symposium 2026</strong>
                   <span>Annual technical fest with paper presentations, coding contests &amp; workshops</span>
+                </div>
+                <div class="panel__item-details">
+                  <p>An annual national level student technical symposium featuring guest lectures, technical paper presentations, model showcases, coding contests, and workshops across all engineering disciplines.</p>
+                  <a class="button button--small button--outline" href="/gallery/">View Gallery</a>
                 </div>
               </li>
               <li class="panel__item">
                 <time class="panel__date" datetime="2026-08-10"><span>10</span> Aug</time>
-                <div>
+                <div class="panel__item-summary">
                   <strong>Independence Day Celebrations</strong>
                   <span>Flag hoisting ceremony &amp; cultural programs</span>
+                </div>
+                <div class="panel__item-details">
+                  <p>Join the faculty, staff, and students of YSREC as we celebrate India's Independence Day. The event starts with the flag hoisting ceremony at 8:00 AM in front of the main building, followed by addresses by the leadership team and student cultural programs.</p>
                 </div>
               </li>
               <li class="panel__item">
                 <time class="panel__date" datetime="2026-09-05"><span>05</span> Sep</time>
-                <div>
+                <div class="panel__item-summary">
                   <strong>Teachers' Day</strong>
                   <span>Celebrating our dedicated faculty members</span>
+                </div>
+                <div class="panel__item-details">
+                  <p>Special student-led activities to honor and express gratitude to our dedicated teachers and faculty members. Cultural performances and token of appreciation ceremony in the main seminar hall.</p>
                 </div>
               </li>
             </ul>
@@ -402,37 +700,68 @@
 
           <!-- Notices Panel -->
           <div class="panel card reveal" style="transition-delay:150ms;">
-            <div class="panel__header">
-              <span class="material-symbols-outlined panel__icon">campaign</span>
-              <h3 class="panel__title">Notices &amp; Announcements</h3>
+            <div class="panel__header" style="flex-direction: column; align-items: stretch; gap: 12px; border-bottom: none; margin-bottom: 12px;">
+              <div style="display: flex; align-items: center; gap: var(--space-3);">
+                <span class="material-symbols-outlined panel__icon">campaign</span>
+                <h3 class="panel__title">Notices &amp; Announcements</h3>
+              </div>
+              <div class="notices-controls">
+                <div class="search-box">
+                  <span class="material-symbols-outlined search-icon">search</span>
+                  <input type="text" id="notices-search" placeholder="Search notices...">
+                </div>
+                <div class="filter-pills" id="notices-filter">
+                  <button class="filter-pill active" data-filter="all" type="button">All</button>
+                  <button class="filter-pill" data-filter="new" type="button">New</button>
+                  <button class="filter-pill" data-filter="exam" type="button">Exam</button>
+                  <button class="filter-pill" data-filter="admission" type="button">Admission</button>
+                  <button class="filter-pill" data-filter="news" type="button">News</button>
+                </div>
+              </div>
             </div>
             <ul class="panel__list">
-              <li class="panel__item">
+              <li class="panel__item" data-category="new">
                 <span class="panel__badge">New</span>
-                <div>
+                <div class="panel__item-summary">
                   <strong>Academic Calendar 2026-27 Released</strong>
                   <span>Download the academic calendar for the upcoming academic year</span>
                 </div>
+                <div class="panel__item-details">
+                  <p>The academic calendar outlines all events, examination periods, registration timelines, and holidays for the 2026-27 academic year. Students can download the official PDF copy under the Calendars section of the site.</p>
+                  <a class="button button--small button--primary" href="/academic-calendars/">View Calendars</a>
+                </div>
               </li>
-              <li class="panel__item">
+              <li class="panel__item" data-category="exam">
                 <span class="panel__badge">Exam</span>
-                <div>
+                <div class="panel__item-summary">
                   <strong>End Semester Exam Schedule</strong>
                   <span>Regular and supplementary examination timetable published</span>
                 </div>
+                <div class="panel__item-details">
+                  <p>The end semester regular and supplementary examination timetables for all B.Tech and M.Tech branches have been officially published. Examinations are scheduled to commence from July 20th. Please download the respective branch timetable files.</p>
+                  <a class="button button--small button--primary" href="/academic-regulations/">Regulations</a>
+                </div>
               </li>
-              <li class="panel__item">
+              <li class="panel__item" data-category="admission">
                 <span class="panel__badge">Admission</span>
-                <div>
+                <div class="panel__item-summary">
                   <strong>B.Tech Admissions Open 2026-27</strong>
                   <span>Applications invited for all branches through AP EAPCET counselling</span>
                 </div>
+                <div class="panel__item-details">
+                  <p>Admissions for the 2026-27 B.Tech programs in Civil, CSE, ECE, EEE, and Mechanical Engineering are officially open. Admissions are through AP EAPCET counselling. Visit the admissions cell for eligibility criteria and brochures.</p>
+                  <a class="button button--small button--primary" href="/admissions/">Admissions Info</a>
+                </div>
               </li>
-              <li class="panel__item">
+              <li class="panel__item" data-category="news">
                 <span class="panel__badge">News</span>
-                <div>
+                <div class="panel__item-summary">
                   <strong>NAAC Accreditation Update</strong>
                   <span>The college is preparing for NAAC accreditation process</span>
+                </div>
+                <div class="panel__item-details">
+                  <p>YSREC is gearing up for the next cycle of NAAC accreditation. Departments are preparing self-study reports and documentation. Institutional audits and mock inspection drills will take place next month.</p>
+                  <a class="button button--small button--primary" href="/about/">About YSREC</a>
                 </div>
               </li>
             </ul>
